@@ -1,7 +1,8 @@
 clear
 
 # every package for my configuration
-sudo pacman -Sy hyprland dunst kitty uwsm dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent grim slurp hyprpaper git base-devel 7zip noto-fonts noto-fonts-cjk kate firefox mpv waybar otf-font-awesome;
+sudo pacman -Sy hyprland dunst kitty uwsm dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent grim slurp hyprpaper git base-devel 7zip noto-fonts noto-fonts-cjk kate firefox mpv waybar otf-font-awesome ly;
+systemctl enable ly.service;
 cd ~;
 
 #directory for app(s) built with git {just a nice thing to have makes PC more orderly}
@@ -29,10 +30,12 @@ curl -o hyprsunset.conf https://raw.githubusercontent.com/sim-thal/DotFiles/refs
 curl -o style.css  https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/configs/style.css;
 curl -o settings.json  https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/configs/settings.json;
 curl -o image.png https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/BG/image.png;
+curl -o config.ini https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/configs/config.ini;
 
 #move config files to apropriate locations
 sudo mv -f style.css /etc/xdg/waybar/;
 sudo mv -f config.jsonc /etc/xdg/waybar/;
+sudo mv -f config.ini /etc/ly/;
 mv -f hyprland.conf ~/.config/hypr/;
 mv -f hyprpaper.conf ~/.config/hypr/;
 mv -f hyprsunset.conf ~/.config/hypr/;
