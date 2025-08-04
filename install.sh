@@ -15,7 +15,9 @@ cd yay;
 makepkg -si;
 
 #install quick menu from ArchUserRepository
-yay -S ulauncher;
+# dependencies
+sudo pacman -S freetype2 harfbuzz cairo pango wayland libxkbcommon meson scdoc wayland-protocols
+yay -S tofi;
 
 #temporary directory for actual config + Background files
 cd ~;
@@ -28,9 +30,10 @@ curl -o hyprland.conf https://raw.githubusercontent.com/sim-thal/DotFiles/refs/h
 curl -o hyprpaper.conf https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/configs/hyprpaper.conf;
 curl -o hyprsunset.conf https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/configs/hyprsunset.conf;
 curl -o style.css  https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/configs/style.css;
-curl -o settings.json  https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/configs/settings.json;
 curl -o image.png https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/BG/image.png;
 curl -o config.ini https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/configs/config.ini;
+curl -o kitty.conf https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/configs/kitty.conf;
+curl -o config.txt https://raw.githubusercontent.com/sim-thal/DotFiles/refs/heads/main/configs/config.txt;
 
 #move config files to apropriate locations
 sudo mv -f style.css /etc/xdg/waybar/;
@@ -40,8 +43,11 @@ mv -f hyprland.conf ~/.config/hypr/;
 mv -f hyprpaper.conf ~/.config/hypr/;
 mv -f hyprsunset.conf ~/.config/hypr/;
 mv image.png ~/;
-mv -f settings.json ~/.config/ulauncher
+mv kitty.conf ~/.config/kitty;
+mkdir ~/.config/tofi;
+mv config.txt ~/.config/tofi;
 
+pacman -R meson scdoc
 cd ~;
 rmdir temp;
 while true; do
