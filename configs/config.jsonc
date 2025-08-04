@@ -28,7 +28,7 @@
 "hyprland/workspaces": {
     "format": "{name}",
     "persistent-workspaces": {
-  	"*" : 4
+  	"*" : 3
     }
 },
 "tray": {
