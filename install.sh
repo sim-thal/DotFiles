@@ -2,7 +2,7 @@ clear;
 
 # every package for my configuration
 sudo pacman -Sy hyprland dunst kitty uwsm dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent grim slurp hyprpaper git base-devel 7zip noto-fonts noto-fonts-cjk kate firefox mpv waybar otf-font-awesome ly;
-;
+read;
 systemctl enable ly.service;
 cd ~;
 
@@ -18,17 +18,20 @@ makepkg -si;
 #install quick menu from ArchUserRepository
 # dependencies
 sudo pacman -S freetype2 harfbuzz cairo pango wayland libxkbcommon meson scdoc wayland-protocols;
+read;
 yay -S tofi;
+read;
 pacman -R meson scdoc;
+read;
 
 cd ~/built-from-git;
 git clone https://github.com/sim-thal/DotFiles.git;
 cd Dotfiles/configs;
 
 #move config files to apropriate locations
-sudo mv -f style.css /etc/xdg/waybar/;
-sudo mv -f config.jsonc /etc/xdg/waybar/;
-sudo mv -f config.ini /etc/ly/;
+sudo mv -f style.css /etc/xdg/waybar/;read;
+sudo mv -f config.jsonc /etc/xdg/waybar/;read;
+sudo mv -f config.ini /etc/ly/;read;
 mv -f hyprland.conf ~/.config/hypr/;
 mv -f hyprpaper.conf ~/.config/hypr/;
 mv -f hyprsunset.conf ~/.config/hypr/;
@@ -39,7 +42,7 @@ cd ~/built-from-git/Dotfiles/BG;
 mv image.png ~/;
 cd ~/built-from-git/Dotfiles;
 7z x Go-Mono.zip;
-mv Go-Mono /usr/share/fonts/;
+sudo mv Go-Mono /usr/share/fonts/;read;
 
 cd ~;
 
