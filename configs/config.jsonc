@@ -1,7 +1,9 @@
 {
-    "height": 25, // Waybar height (to be removed for auto height)
-    "spacing": 0, // Gaps between modules (4px)
 
+    "exclusive":true,
+    "layer":"top",
+    "height": 25,
+    "spacing": 0,
     "modules-left": [
  	"hyprland/workspaces"
     ],
@@ -14,6 +16,7 @@
         "network",
         "tray",
         "battery",
+        "custom_firmware_boot"
     ],
 
     "keyboard-state": {
@@ -31,14 +34,16 @@
   	"*" : 3
     }
 },
+
+
 "tray": {
-    // "icon-size": 21,
-    "spacing": 10
+    "icon-size": 21,
+
 },
 "clock": {
     // "timezone": "America/New_York",
     "tooltip-format": "<span size=\"large\" style=\"oblique\">{:%Y %B}</span>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+    "format-alt": "{:%Y-%m-%d}",
 },
 "battery": {
     "states": {
@@ -62,7 +67,7 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
 },
 "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -77,7 +82,7 @@
         "phone": "",
         "portable": "",
         "car": "",
-        "default": ["", "", ""]
+        "default": ["", "", ""],
     },
     "on-click": "pavucontrol"
 },

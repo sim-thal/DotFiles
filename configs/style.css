@@ -1,63 +1,45 @@
 * {
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 18px;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background: rgba(0,0,0,0);
+    border: rgba(0,250,0,1);
+    box-shadow: none;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
-button {
-    box-shadow: inset 0 -3px transparent;
-    border: none;
-    border-radius: 0;
-}
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
 #pulseaudio:hover {
 
 }
 
+#workspaces {
+    border-radius: 0px 0px 10px 0px;
+
+    transition:none;
+}
 #workspaces button {
     padding: 0 5px;
-    background-color: transparent;
+
     color: #ffffff;
 }
 
-#workspaces button.empty {
-    color: @overlay0;
-}
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(120, 120, 120, 0.2);
 }
 
 #workspaces button.active {
-    background-color: #ffffff;
-    color: #000000;
+    color: #ffffff;
+
+    font-weight: 900
 }
 
 #workspaces button.urgent {
     background-color: @red;
+    border-radius: 20px;
 }
 
 #mode {
@@ -65,14 +47,13 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#clock,
 #battery,
 #network,
 #pulseaudio,
 #tray,
 #window,
 #workspaces {
-    margin: 0 4px;
+    padding: 0 5px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -86,12 +67,17 @@ button:hover {
 }
 
 #clock {
-  
+color:#ffffff;
+
+font-weight:500;
+border-radius: 0px 0px 15px 15px;
+padding-left: 10px;
+padding-right: 10px;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+
+    color: #ffffff;
 }
 
 #battery.charging, #battery.plugged {
@@ -102,7 +88,7 @@ button:hover {
 @keyframes blink {
     to {
         background-color: #ffffff;
-        color: #000000;
+        color: #ffffff;
     }
 }
 
@@ -118,19 +104,28 @@ button:hover {
 }
 
 #network {
+color:#ffffff;
 
+font-weight:500;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+color:#ffffff;
+    background-color: @red;
+font-weight:500;
 }
 
 #pulseaudio {
-    color: #ffffff;
+padding-left: 10px;
+color:#ffffff;
+
+font-weight:500;
+border-radius:0px 0px 0px 15px
 }
 
 #pulseaudio.muted {
     color: #ffffff;
+    background-color: rgba(0,0,0,0.5);
 }
 
 #tray {
@@ -145,3 +140,4 @@ button:hover {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
+

@@ -1,7 +1,7 @@
 clear;
 
 # every package for my configuration
-sudo pacman -Sy hyprland dunst kitty uwsm dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland polkit-kde-agent grim slurp hyprpaper git base-devel 7zip noto-fonts noto-fonts-cjk kate firefox mpv waybar otf-font-awesome ly;
+sudo pacman -Sy hyprland dunst kitty uwsm dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprsunset grim slurp hyprpaper git base-devel 7zip noto-fonts noto-fonts-cjk kate firefox mpv waybar otf-font-awesome ly;
 systemctl enable ly.service;
 cd ~;
 
@@ -35,7 +35,7 @@ mv kitty.conf ~/.config/kitty;
 mkdir ~/.config/tofi;
 mv config.txt ~/.config/tofi;
 cd ~/built-from-git/DotFiles/BG;
-mv image.png ~/;
+mv image.jpg ~/;
 cd ~/built-from-git/DotFiles;
 7z x Go-Mono.zip;
 sudo mv Go-Mono /usr/share/fonts/;
