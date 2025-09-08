@@ -1,7 +1,7 @@
 clear;
 
 # every package for my configuration
-sudo pacman -Sy hyprland dunst kitty uwsm dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprsunset grim slurp hyprpaper git base-devel 7zip noto-fonts noto-fonts-cjk kate firefox mpv waybar otf-font-awesome ly;
+sudo pacman -Sy hyprland dunst uwsm dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprsunset grim slurp hyprpaper git base-devel 7zip noto-fonts noto-fonts-cjk kate firefox mpv waybar otf-font-awesome ly;
 systemctl enable ly.service;
 cd ~;
 
